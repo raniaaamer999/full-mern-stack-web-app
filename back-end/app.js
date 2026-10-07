@@ -22,6 +22,18 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+// a route to return About Us page content
+app.get('/about', (req, res) => {
+  res.json({
+    paragraphs: [
+      'Hi, I am Rania, a junior at NYU Abu Dhabi.',
+      'I am a CS major.',
+      'I like travelling.',
+    ],
+    imageUrl: '/images/Picture.jpeg',
+  })
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
